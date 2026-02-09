@@ -6,10 +6,9 @@ REAL_SCHEDULE = "00:00-00:30, 02:30-08:30, 10:30-16:30, 18:30-24:00"
 
 
 def get_full_schedule_text():
-    # Виносимо перенос рядка в окрему змінну, щоб уникнути SyntaxError
-    newline = "\n"
-    formatted_intervals = REAL_SCHEDULE.replace(", ", newline)
-    return f"📅 **Графік на сьогодні (2.1):**{newline}🔴 Відключення:{newline}{formatted_intervals}"
+    n = "\n"  # Створюємо перенос рядка окремо
+    return f"📅 **Графік на сьогодні (2.1):**{n}🔴 Відключення:{n}{REAL_SCHEDULE.replace(', ', n)}"
+
 
 
 def check_light_status():
